@@ -11,12 +11,14 @@
 
     <div class="container">
             <h1>Guest Books</h1>
+            @foreach ($guestbooks as $guestbook)
             <div class="card">
                 <div class="card-body">
-                    <h3>Nama</h3>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque mollitia voluptates aliquam asperiores culpa, obcaecati dicta alias et architecto hic autem laudantium recusandae magni, ut quaerat numquam accusantium sit sequi?</p>
+                    <h3>{{ $guestbook->name }}</h3>
+                    {!! $guestbook->message !!}
                 </div>
             </div>
+            @endforeach
 
             <hr>
 
@@ -24,6 +26,7 @@
                 <div class="card-body">
                     <h1>Leave Your Message</h1>
                     <form action="" method="post">
+                        @csrf
                         <div class="form-group">
                             <label for="" class="label">Name</label>
                             <input type="text" class="form-control" name="name">

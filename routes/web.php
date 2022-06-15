@@ -11,6 +11,5 @@
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/', 'GuestBookController@index')->name('guestbook');
+Route::post('/', 'GuestBookController@store')->name('guestbook.store');

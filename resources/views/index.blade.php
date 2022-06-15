@@ -31,7 +31,7 @@
 
                         <div class="form-group">
                             <label for="" class="label">Message</label>
-                            <textarea name="message" id="" cols="30" rows="4" class="form-control"></textarea>
+                            <textarea name="message" id="editor" cols="30" rows="4" class="form-control"></textarea>
                         </div>
 
                         <div class="form-group">
@@ -41,5 +41,17 @@
                 </div>
             </div>
     </div>
+
+    <script src="https://cdn.ckeditor.com/ckeditor5/34.1.0/classic/ckeditor.js"></script>
+    <script>
+        ClassicEditor
+                .create( document.querySelector( '#editor' ) )
+                .then( editor => {
+                        console.log( editor );
+                } )
+                .catch( error => {
+                        console.error( error );
+                } );
+    </script>
 </body>
 </html>

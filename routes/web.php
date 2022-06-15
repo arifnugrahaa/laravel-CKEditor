@@ -13,3 +13,11 @@
 
 Route::get('/', 'GuestBookController@index')->name('guestbook');
 Route::post('/', 'GuestBookController@store')->name('guestbook.store');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

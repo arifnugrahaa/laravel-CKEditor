@@ -45,8 +45,8 @@
             </div>
     </div>
 
-    <script src="https://cdn.ckeditor.com/ckeditor5/34.1.0/classic/ckeditor.js"></script>
-    <script>
+    {{-- <script src="https://cdn.ckeditor.com/ckeditor5/34.1.0/classic/ckeditor.js"></script> --}}
+    {{-- <script>
         ClassicEditor
                 .create( document.querySelector( '#editor' ) )
                 .then( editor => {
@@ -55,6 +55,19 @@
                 .catch( error => {
                         console.error( error );
                 } );
+    </script> --}}
+
+    <script src="//cdn.ckeditor.com/4.6.2/standard/ckeditor.js"></script>
+<script>
+  var options = {
+    filebrowserImageBrowseUrl: '/laravel-filemanager?type=Images',
+    filebrowserImageUploadUrl: '/laravel-filemanager/upload?type=Images&_token=',
+    filebrowserBrowseUrl: '/laravel-filemanager?type=Files',
+    filebrowserUploadUrl: '/laravel-filemanager/upload?type=Files&_token='
+  };
+</script>
+    <script>
+        CKEDITOR.replace('editor', options);
     </script>
 </body>
 </html>
